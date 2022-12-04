@@ -16,14 +16,14 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 
-app.use(
-  sessions({
-    secret: process.env.SESSION_SECRET,
-    saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
-    resave: true,
-  })
-)
+// app.use(
+//   sessions({
+//     secret: process.env.SESSION_SECRET,
+//     saveUninitialized: true,
+//     cookie: { maxAge: 1000 * 60 * 60 * 24 },
+//     resave: true,
+//   })
+// )
 const PORT=process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname, "../build")));
 
